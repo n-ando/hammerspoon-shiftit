@@ -26,6 +26,12 @@ obj.mapping = {
   upright = { obj.mash, '2' },
   botleft = { obj.mash, '3' },
   botright = { obj.mash, '4' },
+  topLeftThird = { obj.mash, '5' },
+  topCenterThird = { obj.mash, '6' },
+  topRightThird = { obj.mash, '7' },
+  bottomLeftThird = { obj.mash, '8' },
+  bottomCenterThird = { obj.mash, '9' },
+  bottomRightThird = { obj.mash, '0' },
   maximum = { obj.mash, 'm' },
   toggleFullScreen = { obj.mash, 'f' },
   toggleZoom = { obj.mash, 'z' },
@@ -46,6 +52,13 @@ local units = {
   upright  = function(x, y) return { x = 1 - (x / 100), y = 0.00, w = x / 100, h = y / 100 } end,
   botleft  = function(x, y) return { x = 0.00, y = 1 - (y / 100), w = x / 100, h = y / 100 } end,
   botright = function(x, y) return { x = 1 - (x / 100), y = 1 - (y / 100), w = x / 100, h = y / 100 } end,
+
+  topLeftThird = { x = 0.00, y = 0.00, w = 1/3, h = 0.50 },
+  topCenterThird = { x = 1/3, y = 0.00, w = 1/3, h = 0.50 },
+  topRightThird = { x = 2/3, y = 0.00, w = 1/3, h = 0.50 },
+  bottomLeftThird = { x = 0.00, y = 0.50, w = 1/3, h = 0.50 },
+  bottomCenterThird = { x = 1/3, y = 0.50, w = 1/3, h = 0.50 },
+  bottomRightThird = { x = 2/3, y = 0.50, w = 1/3, h = 0.50 },
 
   maximum = { x = 0.00, y = 0.00, w = 1.00, h = 1.00 },
 }
@@ -160,6 +173,36 @@ function obj:botleft() self:moveWithCycles(units.botleft) end
 
 function obj:botright() self:moveWithCycles(units.botright) end
 
+function obj:topLeftThird()
+  latestMove.direction = 'topLeftThird'
+  self:move(units.topLeftThird)
+end
+
+function obj:topCenterThird()
+  latestMove.direction = 'topCenterThird'
+  self:move(units.topCenterThird)
+end
+
+function obj:topRightThird()
+  latestMove.direction = 'topRightThird'
+  self:move(units.topRightThird)
+end
+
+function obj:bottomLeftThird()
+  latestMove.direction = 'bottomLeftThird'
+  self:move(units.bottomLeftThird)
+end
+
+function obj:bottomCenterThird()
+  latestMove.direction = 'bottomCenterThird'
+  self:move(units.bottomCenterThird)
+end
+
+function obj:bottomRightThird()
+  latestMove.direction = 'bottomRightThird'
+  self:move(units.bottomRightThird)
+end
+
 function obj:maximum()
   latestMove.direction = 'maximum'
   self:move(units.maximum)
@@ -200,6 +243,12 @@ function obj:resizeIn() self:resizeWindowInSteps(false) end
 ---   * upright
 ---   * botleft
 ---   * botright
+---   * topLeftThird
+---   * topCenterThird
+---   * topRightThird
+---   * bottomLeftThird
+---   * bottomCenterThird
+---   * bottomRightThird
 ---   * maximum
 ---   * toggleFullScreen
 ---   * toggleZoom
@@ -222,6 +271,12 @@ function obj:bindHotkeys(mapping)
   self.hs.hotkey.bind(self.mapping.upright[1], self.mapping.upright[2], function() self:upright() end)
   self.hs.hotkey.bind(self.mapping.botleft[1], self.mapping.botleft[2], function() self:botleft() end)
   self.hs.hotkey.bind(self.mapping.botright[1], self.mapping.botright[2], function() self:botright() end)
+  self.hs.hotkey.bind(self.mapping.topLeftThird[1], self.mapping.topLeftThird[2], function() self:topLeftThird() end)
+  self.hs.hotkey.bind(self.mapping.topCenterThird[1], self.mapping.topCenterThird[2], function() self:topCenterThird() end)
+  self.hs.hotkey.bind(self.mapping.topRightThird[1], self.mapping.topRightThird[2], function() self:topRightThird() end)
+  self.hs.hotkey.bind(self.mapping.bottomLeftThird[1], self.mapping.bottomLeftThird[2], function() self:bottomLeftThird() end)
+  self.hs.hotkey.bind(self.mapping.bottomCenterThird[1], self.mapping.bottomCenterThird[2], function() self:bottomCenterThird() end)
+  self.hs.hotkey.bind(self.mapping.bottomRightThird[1], self.mapping.bottomRightThird[2], function() self:bottomRightThird() end)
   self.hs.hotkey.bind(self.mapping.maximum[1], self.mapping.maximum[2], function() self:maximum() end)
   self.hs.hotkey.bind(self.mapping.toggleFullScreen[1], self.mapping.toggleFullScreen[2], function()
     self:toggleFullScreen()
