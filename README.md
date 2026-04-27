@@ -93,12 +93,16 @@ Having issues? Check out the [Known issues](https://github.com/peterklijn/hammer
 - `ctrl(^) + alt(⌥) + cmd(⌘) + 9` Snap current window to the bottom-center cell of a 6-part grid
 - `ctrl(^) + alt(⌥) + cmd(⌘) + 0` Snap current window to the bottom-right cell of a 6-part grid
 
+### Window resize
+
 - `ctrl(^) + alt(⌥) + cmd(⌘) + M` Maximise current window
 - `ctrl(^) + alt(⌥) + cmd(⌘) + C` Centralize current window
 - `ctrl(^) + alt(⌥) + cmd(⌘) + -` Make current window smaller
 - `ctrl(^) + alt(⌥) + cmd(⌘) + =` Make current window bigger
 
 ![Hammerspoon ShiftIt increase decrease demo](https://github.com/peterklijn/hammerspoon-shiftit/blob/master/images/shiftit-demo-increase-decrease.gif?raw=true)
+
+### Other window operations
 
 - `ctrl(^) + alt(⌥) + cmd(⌘) + F` Toggle full screen for current window
 - `ctrl(^) + alt(⌥) + cmd(⌘) + Z` Toggle zoom for current window
