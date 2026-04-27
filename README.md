@@ -68,6 +68,13 @@ Having issues? Check out the [Known issues](https://github.com/peterklijn/hammer
 
 ![Hammerspoon ShiftIt snap sides demo](https://github.com/peterklijn/hammerspoon-shiftit/blob/master/images/shiftit-demo-snap-sides.gif?raw=true)
 
+### Snap to thirds (left, center, right)
+
+- `ctrl(^) + alt(⌥) + cmd(⌘) + H` Snap current window to the left third of the screen
+- `ctrl(^) + alt(⌥) + cmd(⌘) + J` Snap current window to the center third of the screen
+- `ctrl(^) + alt(⌥) + cmd(⌘) + K` Snap current window to the center third of the screen (dup key-bind)
+- `ctrl(^) + alt(⌥) + cmd(⌘) + L` Snap current window to the right third of the screen
+
 ### Snap to corners
 
 - `ctrl(^) + alt(⌥) + cmd(⌘) + 1` Snap current window to the left top quarter to the screen
@@ -77,6 +84,14 @@ Having issues? Check out the [Known issues](https://github.com/peterklijn/hammer
 
 ![Hammerspoon ShiftIt snap corners demo](https://github.com/peterklijn/hammerspoon-shiftit/blob/master/images/shiftit-demo-snap-corners.gif?raw=true)
 
+### Snap to six-part grid
+
+- `ctrl(^) + alt(⌥) + cmd(⌘) + 5` Snap current window to the top-left cell of a 6-part grid
+- `ctrl(^) + alt(⌥) + cmd(⌘) + 6` Snap current window to the top-center cell of a 6-part grid
+- `ctrl(^) + alt(⌥) + cmd(⌘) + 7` Snap current window to the top-right cell of a 6-part grid
+- `ctrl(^) + alt(⌥) + cmd(⌘) + 8` Snap current window to the bottom-left cell of a 6-part grid
+- `ctrl(^) + alt(⌥) + cmd(⌘) + 9` Snap current window to the bottom-center cell of a 6-part grid
+- `ctrl(^) + alt(⌥) + cmd(⌘) + 0` Snap current window to the bottom-right cell of a 6-part grid
 
 - `ctrl(^) + alt(⌥) + cmd(⌘) + M` Maximise current window
 - `ctrl(^) + alt(⌥) + cmd(⌘) + C` Centralize current window
@@ -123,10 +138,19 @@ The default key mapping looks like this:
   right = { { 'ctrl', 'alt', 'cmd' }, 'right' },
   up = { { 'ctrl', 'alt', 'cmd' }, 'up' },
   down = { { 'ctrl', 'alt', 'cmd' }, 'down' },
+  leftThird = { { 'ctrl', 'alt', 'cmd' }, 'h' },
+  centerThird = { { 'ctrl', 'alt', 'cmd' }, 'j,k' },
+  rightThird = { { 'ctrl', 'alt', 'cmd' }, 'l' },
   upleft = { { 'ctrl', 'alt', 'cmd' }, '1' },
   upright = { { 'ctrl', 'alt', 'cmd' }, '2' },
   botleft = { { 'ctrl', 'alt', 'cmd' }, '3' },
   botright = { { 'ctrl', 'alt', 'cmd' }, '4' },
+  topleftThird = { { 'ctrl', 'alt', 'cmd' }, '5' },
+  topcenterThird = { { 'ctrl', 'alt', 'cmd' }, '6' },
+  toprightleftThird = { { 'ctrl', 'alt', 'cmd' }, '7' },
+  botleftThird = { { 'ctrl', 'alt', 'cmd' }, '8' },
+  botcenterThird = { { 'ctrl', 'alt', 'cmd' }, '9' },
+  botrightThird = { { 'ctrl', 'alt', 'cmd' }, '0' },
   maximum = { { 'ctrl', 'alt', 'cmd' }, 'm' },
   toggleFullScreen = { { 'ctrl', 'alt', 'cmd' }, 'f' },
   toggleZoom = { { 'ctrl', 'alt', 'cmd' }, 'z' },

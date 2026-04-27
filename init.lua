@@ -26,6 +26,10 @@ obj.mapping = {
   upright = { obj.mash, '2' },
   botleft = { obj.mash, '3' },
   botright = { obj.mash, '4' },
+  leftThird = { obj.mash, 'h' },
+  centerThird1 = { obj.mash, 'j' },
+  centerThird2 = { obj.mash, 'k' },
+  rightThird = { obj.mash, 'l' },
   topLeftThird = { obj.mash, '5' },
   topCenterThird = { obj.mash, '6' },
   topRightThird = { obj.mash, '7' },
@@ -52,6 +56,11 @@ local units = {
   upright  = function(x, y) return { x = 1 - (x / 100), y = 0.00, w = x / 100, h = y / 100 } end,
   botleft  = function(x, y) return { x = 0.00, y = 1 - (y / 100), w = x / 100, h = y / 100 } end,
   botright = function(x, y) return { x = 1 - (x / 100), y = 1 - (y / 100), w = x / 100, h = y / 100 } end,
+
+  leftThird = { x = 0.00, y = 0.00, w = 1/3, h = 1.00 },
+  centerThird1 = { x = 1/3, y = 0.00, w = 1/3, h = 1.00 },
+  centerThird2 = { x = 1/3, y = 0.00, w = 1/3, h = 1.00 },
+  rightThird = { x = 2/3, y = 0.00, w = 1/3, h = 1.00 },
 
   topLeftThird = { x = 0.00, y = 0.00, w = 1/3, h = 0.50 },
   topCenterThird = { x = 1/3, y = 0.00, w = 1/3, h = 0.50 },
@@ -173,6 +182,25 @@ function obj:botleft() self:moveWithCycles(units.botleft) end
 
 function obj:botright() self:moveWithCycles(units.botright) end
 
+function obj:leftThird()
+  latestMove.direction = 'leftThird'
+  self:move(units.leftThird)
+end
+
+function obj:centerThird1()
+  latestMove.direction = 'centerThird1'
+  self:move(units.centerThird1)
+end
+function obj:centerThird2()
+  latestMove.direction = 'centerThird2'
+  self:move(units.centerThird2)
+end
+
+function obj:rightThird()
+  latestMove.direction = 'rightThird'
+  self:move(units.rightThird)
+end
+
 function obj:topLeftThird()
   latestMove.direction = 'topLeftThird'
   self:move(units.topLeftThird)
@@ -243,6 +271,9 @@ function obj:resizeIn() self:resizeWindowInSteps(false) end
 ---   * upright
 ---   * botleft
 ---   * botright
+---   * leftThird
+---   * centerThird
+---   * rightThird
 ---   * topLeftThird
 ---   * topCenterThird
 ---   * topRightThird
@@ -271,6 +302,10 @@ function obj:bindHotkeys(mapping)
   self.hs.hotkey.bind(self.mapping.upright[1], self.mapping.upright[2], function() self:upright() end)
   self.hs.hotkey.bind(self.mapping.botleft[1], self.mapping.botleft[2], function() self:botleft() end)
   self.hs.hotkey.bind(self.mapping.botright[1], self.mapping.botright[2], function() self:botright() end)
+  self.hs.hotkey.bind(self.mapping.leftThird[1], self.mapping.leftThird[2], function() self:leftThird() end)
+  self.hs.hotkey.bind(self.mapping.centerThird1[1], self.mapping.centerThird1[2], function() self:centerThird1() end)
+  self.hs.hotkey.bind(self.mapping.centerThird2[1], self.mapping.centerThird2[2], function() self:centerThird2() end)
+  self.hs.hotkey.bind(self.mapping.rightThird[1], self.mapping.rightThird[2], function() self:rightThird() end)
   self.hs.hotkey.bind(self.mapping.topLeftThird[1], self.mapping.topLeftThird[2], function() self:topLeftThird() end)
   self.hs.hotkey.bind(self.mapping.topCenterThird[1], self.mapping.topCenterThird[2], function() self:topCenterThird() end)
   self.hs.hotkey.bind(self.mapping.topRightThird[1], self.mapping.topRightThird[2], function() self:topRightThird() end)
